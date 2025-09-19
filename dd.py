@@ -59,7 +59,7 @@ PLATFORM_COLOR_MAP = {
     "#0099F9": "iOS"      # Assuming blue is iOS
 }
 
-html_file_path = r"D:\Users\Mussy\Desktop\新建文件夹\Manus AI _ data.ai下载量.html"
+html_file_path = r"D:\Users\Mussy\Desktop\新建文件夹\Poly.AI - Create AI Chat Bot _ data.ai首页下载量全平台.html"
 
 try:
     with open(html_file_path, 'r', encoding='utf-8') as f:
@@ -333,7 +333,7 @@ else:
 if grouped_output:
     final_json_output = list(grouped_output.values())
 
-    output_json_path = "Aggregated_Analytics_Data.json"
+    output_json_path = "Grabbed_Aggregated_Analytics_Data.json"
     with open(output_json_path, 'w', encoding='utf-8') as json_file:
         json.dump(final_json_output, json_file, ensure_ascii=False, indent=4)
     print(f"整合后的数据已保存到文件：{output_json_path}")

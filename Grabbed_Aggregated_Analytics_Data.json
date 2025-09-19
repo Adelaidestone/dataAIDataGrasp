@@ -1,0 +1,61 @@
+[
+    {
+        "Application": "PolyBuzz: Chat with AI Friends",
+        "Platforms": {
+            "Android": {
+                "Downloads": 4840000,
+                "Downloads Change": -160000,
+                "Cumulative Downloads": 33000000,
+                "Cumulative Downloads Change": 4840000,
+                "Store Revenue": 1570000,
+                "Store Revenue Change": 60000,
+                "Active Users": 36260000,
+                "Active Users Change": 2500000,
+                "Recent Three Month Downloads": [
+                    {
+                        "Month": "June",
+                        "Year": 2025,
+                        "Downloads": 533297
+                    },
+                    {
+                        "Month": "July",
+                        "Year": 2025,
+                        "Downloads": 525380
+                    },
+                    {
+                        "Month": "August",
+                        "Year": 2025,
+                        "Downloads": 514470
+                    }
+                ]
+            },
+            "iOS": {
+                "Downloads": 1780000,
+                "Downloads Change": -480000,
+                "Cumulative Downloads": 10770000,
+                "Cumulative Downloads Change": 1780000,
+                "Store Revenue": 1330000,
+                "Store Revenue Change": -8000,
+                "Active Users": 12080000,
+                "Active Users Change": 1620000,
+                "Recent Three Month Downloads": [
+                    {
+                        "Month": "June",
+                        "Year": 2025,
+                        "Downloads": 436509
+                    },
+                    {
+                        "Month": "July",
+                        "Year": 2025,
+                        "Downloads": 451961
+                    },
+                    {
+                        "Month": "August",
+                        "Year": 2025,
+                        "Downloads": 441421
+                    }
+                ]
+            }
+        }
+    }
+]

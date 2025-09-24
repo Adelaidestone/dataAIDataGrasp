@@ -1,6 +1,10 @@
-[
-    {
-        "Device": "所有Android设备",
-        "Average Store Revenue": 524000
-    }
-]
+{
+    "Application": "PolyBuzz: Chat with AI Friends",
+    "Platform": "Google Play",
+    "Revenue Data": [
+        {
+            "Device": "所有Android设备",
+            "Average Store Revenue": 524000
+        }
+    ]
+}

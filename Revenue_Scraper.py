@@ -4,6 +4,83 @@ from lxml import etree
 import json
 import re # Import regular expression module
 
+def extract_product_name_from_html(soup):
+    """
+    Extract product name from HTML content
+    """
+    # Method 1: Try to extract from page title
+    title_tag = soup.find('title')
+    if title_tag:
+        title_text = title_tag.get_text(strip=True)
+        # Extract product name from title (assuming format like "ProductName | 收入" or similar)
+        if '|' in title_text:
+            product_name = title_text.split('|')[0].strip()
+            return product_name
+        elif '_' in title_text:
+            product_name = title_text.split('_')[0].strip()
+            return product_name
+    
+    # Method 2: Try to extract from breadcrumb or navigation elements
+    breadcrumb = soup.find('nav', class_='breadcrumb') or soup.find('div', class_='breadcrumb')
+    if breadcrumb:
+        links = breadcrumb.find_all('a')
+        if len(links) > 1:
+            return links[-2].get_text(strip=True)  # Usually the second to last is the app name
+    
+    # Method 3: Try to extract from header or h1 tags
+    h1_tag = soup.find('h1')
+    if h1_tag:
+        h1_text = h1_tag.get_text(strip=True)
+        if '收入' not in h1_text and '用户留存' not in h1_text and '留存' not in h1_text and '使用行为' not in h1_text:
+            return h1_text
+    
+    # Method 4: Try to extract from meta tags
+    meta_title = soup.find('meta', attrs={'name': 'title'}) or soup.find('meta', attrs={'property': 'og:title'})
+    if meta_title:
+        content = meta_title.get('content', '')
+        if '|' in content:
+            return content.split('|')[0].strip()
+    
+    # Method 5: Try to extract from specific app info elements
+    app_info = soup.find('div', class_=lambda x: x and ('app-info' in x or 'product-info' in x))
+    if app_info:
+        app_name = app_info.find('span') or app_info.find('div')
+        if app_name:
+            return app_name.get_text(strip=True)
+    
+    return "Unknown Product"
+
+def extract_platform_from_html(soup):
+    """
+    Extract platform information from HTML content
+    """
+    # Method 1: Try to extract platform from meta information
+    meta_tags = soup.find_all('meta')
+    for meta in meta_tags:
+        content = meta.get('content', '').lower()
+        if 'google play' in content or 'android' in content:
+            return "Google Play"
+        elif 'app store' in content or 'ios' in content:
+            return "App Store"
+    
+    # Method 2: Look for platform indicators in the HTML content
+    html_text = soup.get_text().lower()
+    if 'google play' in html_text or 'android' in html_text:
+        return "Google Play"
+    elif 'app store' in html_text or 'ios' in html_text:
+        return "App Store"
+    
+    # Method 3: Try to extract from specific platform elements
+    platform_elements = soup.find_all(['div', 'span'], class_=lambda x: x and ('platform' in x.lower() or 'store' in x.lower()))
+    for element in platform_elements:
+        text = element.get_text().lower()
+        if 'google play' in text or 'android' in text:
+            return "Google Play"
+        elif 'app store' in text or 'ios' in text:
+            return "App Store"
+    
+    return "Unknown Platform"
+
 # Mapping for Chinese headers to English headers
 HEADER_MAP = {
     '设备': 'Device',
@@ -65,6 +142,14 @@ except Exception as e:
     exit()
 
 soup = BeautifulSoup(html_content, 'html.parser')
+
+# Extract product name from HTML
+product_name = extract_product_name_from_html(soup)
+print(f"提取到的产品名: {product_name}")
+
+# Extract platform from HTML
+platform = extract_platform_from_html(soup)
+print(f"提取到的平台: {platform}")
 
 # Initialize grouped_output globally so both table and chart data can add to it
 grouped_output = {}
@@ -140,8 +225,12 @@ if table_wrapper:
         df = pd.DataFrame(data, columns=final_headers)
         print("✅ 成功提取表格数据：")
         
-        # No grouping needed as we only have one row for "所有Android设备" and one metric
-        final_json_output = df.to_dict(orient='records')
+        # Include product name and platform in the final output
+        final_json_output = {
+            "Application": product_name,
+            "Platform": platform,
+            "Revenue Data": df.to_dict(orient='records')
+        }
 
         output_json_path = "PolyBuzz_Revenue_Aggregated_Analytics_Data.json"
         with open(output_json_path, 'w', encoding='utf-8') as json_file:

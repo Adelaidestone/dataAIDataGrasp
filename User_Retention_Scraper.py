@@ -7,6 +7,104 @@ import re # Import regular expression module
 # Define the application name explicitly as it's part of the filename, not in table data directly
 # APPLICATION_NAME = "PolyBuzz: Chat with AI Friends"
 
+def extract_product_name_from_html(soup):
+    """
+    Extract product name from HTML content
+    """
+    # Method 1: Try to extract from page title
+    title_tag = soup.find('title')
+    if title_tag:
+        title_text = title_tag.get_text(strip=True)
+        # Extract product name from title (assuming format like "ProductName | 用户留存" or similar)
+        if '|' in title_text:
+            product_name = title_text.split('|')[0].strip()
+            return product_name
+        elif '_' in title_text:
+            product_name = title_text.split('_')[0].strip()
+            return product_name
+    
+    # Method 2: Try to extract from breadcrumb or navigation elements
+    breadcrumb = soup.find('nav', class_='breadcrumb') or soup.find('div', class_='breadcrumb')
+    if breadcrumb:
+        links = breadcrumb.find_all('a')
+        if len(links) > 1:
+            return links[-2].get_text(strip=True)  # Usually the second to last is the app name
+    
+    # Method 3: Try to extract from header or h1 tags
+    h1_tag = soup.find('h1')
+    if h1_tag:
+        h1_text = h1_tag.get_text(strip=True)
+        if '用户留存' not in h1_text and '留存' not in h1_text:
+            return h1_text
+    
+    # Method 4: Try to extract from meta tags
+    meta_title = soup.find('meta', attrs={'name': 'title'}) or soup.find('meta', attrs={'property': 'og:title'})
+    if meta_title:
+        content = meta_title.get('content', '')
+        if '|' in content:
+            return content.split('|')[0].strip()
+    
+    # Method 5: Try to extract from specific app info elements
+    app_info = soup.find('div', class_=lambda x: x and ('app-info' in x or 'product-info' in x))
+    if app_info:
+        app_name = app_info.find('span') or app_info.find('div')
+        if app_name:
+            return app_name.get_text(strip=True)
+    
+    return "Unknown Product"
+
+def extract_app_info_from_html(soup):
+    """
+    Extract application name and channel information from HTML content
+    """
+    app_info = {
+        "app_name": "Unknown App",
+        "channel": "Unknown Channel"
+    }
+    
+    # Method 1: Try to extract from page title
+    title_tag = soup.find('title')
+    if title_tag:
+        title_text = title_tag.get_text(strip=True)
+        if '|' in title_text:
+            app_info["app_name"] = title_text.split('|')[0].strip()
+        elif '_' in title_text:
+            app_info["app_name"] = title_text.split('_')[0].strip()
+    
+    # Method 2: Try to extract channel from URL or meta information
+    # Look for app store indicators in the HTML
+    meta_tags = soup.find_all('meta')
+    for meta in meta_tags:
+        content = meta.get('content', '').lower()
+        if 'google play' in content or 'android' in content:
+            app_info["channel"] = "Google Play"
+            break
+        elif 'app store' in content or 'ios' in content:
+            app_info["channel"] = "App Store"
+            break
+    
+    # Method 3: Look for platform indicators in the HTML content
+    html_text = soup.get_text().lower()
+    if 'google play' in html_text or 'android' in html_text:
+        if app_info["channel"] == "Unknown Channel":
+            app_info["channel"] = "Google Play"
+    elif 'app store' in html_text or 'ios' in html_text:
+        if app_info["channel"] == "Unknown Channel":
+            app_info["channel"] = "App Store"
+    
+    # Method 4: Try to extract from specific platform elements
+    platform_elements = soup.find_all(['div', 'span'], class_=lambda x: x and ('platform' in x.lower() or 'store' in x.lower()))
+    for element in platform_elements:
+        text = element.get_text().lower()
+        if 'google play' in text or 'android' in text:
+            app_info["channel"] = "Google Play"
+            break
+        elif 'app store' in text or 'ios' in text:
+            app_info["channel"] = "App Store"
+            break
+    
+    return app_info
+
 # Mapping for Chinese headers to English headers
 HEADER_MAP = {
     '月': 'Month',
@@ -174,6 +272,15 @@ except Exception as e:
 
 soup = BeautifulSoup(html_content, 'html.parser')
 
+# Extract product name from HTML
+product_name = extract_product_name_from_html(soup)
+print(f"提取到的产品名: {product_name}")
+
+# Extract application info (name and channel) from HTML
+app_info = extract_app_info_from_html(soup)
+print(f"提取到的应用名: {app_info['app_name']}")
+print(f"提取到的渠道: {app_info['channel']}")
+
 # --- Extract data from the first table (Monthly App Retention) ---
 table_wrapper_monthly = soup.find('div', {'data-table-type': 'app_user_retention_table'})
 monthly_retention_data = extract_retention_table_data(table_wrapper_monthly, "Monthly App Retention")
@@ -184,6 +291,8 @@ publisher_retention_data = extract_retention_table_data(table_wrapper_publisher,
 
 # Combine all extracted data into a single JSON object
 final_json_output = {
+    "Application": product_name,
+    "Platform": app_info['channel'],
     "Monthly App Retention": monthly_retention_data,
     "Publisher Apps User Retention (Overall)": publisher_retention_data
 }

@@ -1,0 +1,1271 @@
+[
+    {
+        "Application": "Suno - AI Music & Songs",
+        "Last Updated": "2025-09-26 21:49:58",
+        "Data Sources": {
+            "Downloads & Basic Metrics": "Available",
+            "Revenue Data": "Available",
+            "User Behavior Data": "Available",
+            "User Retention Data": "Not Available"
+        },
+        "Platforms": {
+            "Android": {
+                "Downloads": 5320000,
+                "Downloads Change": -3890000,
+                "Cumulative Downloads": 17570000,
+                "Cumulative Downloads Change": 5320000,
+                "Store Revenue": 1380000,
+                "Store Revenue Change": 690000,
+                "Active Users": 9420000,
+                "Active Users Change": 550000,
+                "Average Store Revenue": 459000,
+                "Device Info": "所有Android设备",
+                "Active Users from Behavior": 9900000.0,
+                "User Share": 100.0,
+                "Avg Time Per User": 3533.0,
+                "User Behavior by Country": [
+                    {
+                        "Country/Region": "全球",
+                        "Active Users": 9900000.0,
+                        "User Share": 100.0,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3533.0
+                    },
+                    {
+                        "Country/Region": "印度",
+                        "Active Users": 2190000.0,
+                        "User Share": 22.15,
+                        "Day 1 Retention": 18.82,
+                        "Day 7 Retention": 5.03,
+                        "Day 30 Retention": 1.85,
+                        "Avg Time Per User": 1656.0
+                    },
+                    {
+                        "Country/Region": "美国",
+                        "Active Users": 1110000.0,
+                        "User Share": 11.17,
+                        "Day 1 Retention": 22.83,
+                        "Day 7 Retention": 6.87,
+                        "Day 30 Retention": 3.56,
+                        "Avg Time Per User": 4403.0
+                    },
+                    {
+                        "Country/Region": "巴西",
+                        "Active Users": 976000.0,
+                        "User Share": 9.86,
+                        "Day 1 Retention": 25.24,
+                        "Day 7 Retention": 7.99,
+                        "Day 30 Retention": 3.72,
+                        "Avg Time Per User": 4356.0
+                    },
+                    {
+                        "Country/Region": "印度尼西亚",
+                        "Active Users": 876000.0,
+                        "User Share": 8.85,
+                        "Day 1 Retention": 26.21,
+                        "Day 7 Retention": 9.1,
+                        "Day 30 Retention": 3.64,
+                        "Avg Time Per User": 5402.0
+                    },
+                    {
+                        "Country/Region": "俄罗斯",
+                        "Active Users": 602000.0,
+                        "User Share": 6.08,
+                        "Day 1 Retention": 23.39,
+                        "Day 7 Retention": 7.67,
+                        "Day 30 Retention": 4.27,
+                        "Avg Time Per User": 3654.0
+                    },
+                    {
+                        "Country/Region": "墨西哥",
+                        "Active Users": 368000.0,
+                        "User Share": 3.72,
+                        "Day 1 Retention": 23.4,
+                        "Day 7 Retention": 5.73,
+                        "Day 30 Retention": 1.95,
+                        "Avg Time Per User": 2445.0
+                    },
+                    {
+                        "Country/Region": "南非",
+                        "Active Users": 321000.0,
+                        "User Share": 3.25,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 4309.0
+                    },
+                    {
+                        "Country/Region": "菲律宾",
+                        "Active Users": 284000.0,
+                        "User Share": 2.87,
+                        "Day 1 Retention": 25.23,
+                        "Day 7 Retention": 5.67,
+                        "Day 30 Retention": 1.9,
+                        "Avg Time Per User": 2859.0
+                    },
+                    {
+                        "Country/Region": "德国",
+                        "Active Users": 258000.0,
+                        "User Share": 2.61,
+                        "Day 1 Retention": 32.99,
+                        "Day 7 Retention": 12.62,
+                        "Day 30 Retention": 6.82,
+                        "Avg Time Per User": 10531.0
+                    },
+                    {
+                        "Country/Region": "土耳其",
+                        "Active Users": 238000.0,
+                        "User Share": 2.4,
+                        "Day 1 Retention": 39.8,
+                        "Day 7 Retention": 15.08,
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2436.0
+                    },
+                    {
+                        "Country/Region": "巴基斯坦",
+                        "Active Users": 211000.0,
+                        "User Share": 2.13,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 4958.0
+                    },
+                    {
+                        "Country/Region": "西班牙",
+                        "Active Users": 193000.0,
+                        "User Share": 1.95,
+                        "Day 1 Retention": 39.08,
+                        "Day 7 Retention": 11.37,
+                        "Day 30 Retention": 4.36,
+                        "Avg Time Per User": 4538.0
+                    },
+                    {
+                        "Country/Region": "韩国",
+                        "Active Users": 186000.0,
+                        "User Share": 1.88,
+                        "Day 1 Retention": 23.61,
+                        "Day 7 Retention": 7.02,
+                        "Day 30 Retention": 2.68,
+                        "Avg Time Per User": 2657.0
+                    },
+                    {
+                        "Country/Region": "意大利",
+                        "Active Users": 176000.0,
+                        "User Share": 1.78,
+                        "Day 1 Retention": 34.3,
+                        "Day 7 Retention": 10.14,
+                        "Day 30 Retention": 4.2,
+                        "Avg Time Per User": 3535.0
+                    },
+                    {
+                        "Country/Region": "泰国",
+                        "Active Users": 176000.0,
+                        "User Share": 1.78,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2131.0
+                    },
+                    {
+                        "Country/Region": "埃及",
+                        "Active Users": 166000.0,
+                        "User Share": 1.67,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2145.0
+                    },
+                    {
+                        "Country/Region": "法国",
+                        "Active Users": 158000.0,
+                        "User Share": 1.6,
+                        "Day 1 Retention": 36.52,
+                        "Day 7 Retention": 12.34,
+                        "Day 30 Retention": 4.86,
+                        "Avg Time Per User": 5411.0
+                    },
+                    {
+                        "Country/Region": "英国",
+                        "Active Users": 152000.0,
+                        "User Share": 1.53,
+                        "Day 1 Retention": 24.13,
+                        "Day 7 Retention": 8.29,
+                        "Day 30 Retention": 4.67,
+                        "Avg Time Per User": 10354.0
+                    },
+                    {
+                        "Country/Region": "波兰",
+                        "Active Users": 148000.0,
+                        "User Share": 1.5,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3528.0
+                    },
+                    {
+                        "Country/Region": "越南",
+                        "Active Users": 122000.0,
+                        "User Share": 1.24,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3639.0
+                    },
+                    {
+                        "Country/Region": "阿根廷",
+                        "Active Users": 122000.0,
+                        "User Share": 1.23,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 4001.0
+                    },
+                    {
+                        "Country/Region": "厄瓜多尔",
+                        "Active Users": 117000.0,
+                        "User Share": 1.18,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2055.0
+                    },
+                    {
+                        "Country/Region": "孟加拉国",
+                        "Active Users": 105000.0,
+                        "User Share": 1.06,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1218.0
+                    },
+                    {
+                        "Country/Region": "马来西亚",
+                        "Active Users": 94600.00000000001,
+                        "User Share": 0.96,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 5655.0
+                    },
+                    {
+                        "Country/Region": "秘鲁",
+                        "Active Users": 80100.0,
+                        "User Share": 0.81,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1320.0
+                    },
+                    {
+                        "Country/Region": "哥伦比亚",
+                        "Active Users": 72800.0,
+                        "User Share": 0.74,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3854.0
+                    },
+                    {
+                        "Country/Region": "罗马尼亚",
+                        "Active Users": 66800.0,
+                        "User Share": 0.68,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2153.0
+                    },
+                    {
+                        "Country/Region": "以色列",
+                        "Active Users": 46800.0,
+                        "User Share": 0.47,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2007.0
+                    },
+                    {
+                        "Country/Region": "加拿大",
+                        "Active Users": 45300.0,
+                        "User Share": 0.46,
+                        "Day 1 Retention": 32.66,
+                        "Day 7 Retention": 11.71,
+                        "Day 30 Retention": 4.32,
+                        "Avg Time Per User": 3429.0
+                    },
+                    {
+                        "Country/Region": "希腊",
+                        "Active Users": 39000.0,
+                        "User Share": 0.39,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 10057.0
+                    },
+                    {
+                        "Country/Region": "多米尼加共和国",
+                        "Active Users": 34000.0,
+                        "User Share": 0.34,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2747.0
+                    },
+                    {
+                        "Country/Region": "智利",
+                        "Active Users": 32500.0,
+                        "User Share": 0.33,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 5228.0
+                    },
+                    {
+                        "Country/Region": "日本",
+                        "Active Users": 30600.0,
+                        "User Share": 0.31,
+                        "Day 1 Retention": 33.6,
+                        "Day 7 Retention": 11.86,
+                        "Day 30 Retention": 5.3,
+                        "Avg Time Per User": 12617.0
+                    },
+                    {
+                        "Country/Region": "奥地利",
+                        "Active Users": 28500.0,
+                        "User Share": 0.29,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1326.0
+                    },
+                    {
+                        "Country/Region": "匈牙利",
+                        "Active Users": 20000.0,
+                        "User Share": 0.2,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1919.0
+                    },
+                    {
+                        "Country/Region": "捷克共和国",
+                        "Active Users": 19100.0,
+                        "User Share": 0.19,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2317.0
+                    },
+                    {
+                        "Country/Region": "瑞典",
+                        "Active Users": 19100.0,
+                        "User Share": 0.19,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1100.0
+                    },
+                    {
+                        "Country/Region": "斯里兰卡",
+                        "Active Users": 17300.0,
+                        "User Share": 0.17,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2136.0
+                    },
+                    {
+                        "Country/Region": "阿尔及利亚",
+                        "Active Users": 16800.0,
+                        "User Share": 0.17,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 952.0
+                    },
+                    {
+                        "Country/Region": "荷兰",
+                        "Active Users": 16600.0,
+                        "User Share": 0.17,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2054.0
+                    },
+                    {
+                        "Country/Region": "葡萄牙",
+                        "Active Users": 15800.0,
+                        "User Share": 0.16,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 4549.0
+                    },
+                    {
+                        "Country/Region": "澳大利亚",
+                        "Active Users": 15400.0,
+                        "User Share": 0.16,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2349.0
+                    },
+                    {
+                        "Country/Region": "爱尔兰",
+                        "Active Users": 15400.0,
+                        "User Share": 0.16,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1449.0
+                    },
+                    {
+                        "Country/Region": "哈萨克斯坦",
+                        "Active Users": 14600.0,
+                        "User Share": 0.15,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1646.0
+                    },
+                    {
+                        "Country/Region": "沙特阿拉伯",
+                        "Active Users": 13899.999999999998,
+                        "User Share": 0.14,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1751.0
+                    },
+                    {
+                        "Country/Region": "比利时",
+                        "Active Users": 12500.0,
+                        "User Share": 0.13,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3941.0
+                    },
+                    {
+                        "Country/Region": "瑞士",
+                        "Active Users": 10000.0,
+                        "User Share": 0.1,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2139.0
+                    },
+                    {
+                        "Country/Region": "伊拉克",
+                        "Active Users": 8900.0,
+                        "User Share": 0.09,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1130.0
+                    },
+                    {
+                        "Country/Region": "芬兰",
+                        "Active Users": 7600.0,
+                        "User Share": 0.08,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1639.0
+                    },
+                    {
+                        "Country/Region": "台湾",
+                        "Active Users": 6400.0,
+                        "User Share": 0.07,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1353.0
+                    },
+                    {
+                        "Country/Region": "丹麦",
+                        "Active Users": 6100.0,
+                        "User Share": 0.06,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 4645.0
+                    },
+                    {
+                        "Country/Region": "新加坡",
+                        "Active Users": 5900.0,
+                        "User Share": 0.06,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3616.0
+                    },
+                    {
+                        "Country/Region": "挪威",
+                        "Active Users": 5700.0,
+                        "User Share": 0.06,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 15002.0
+                    },
+                    {
+                        "Country/Region": "阿联酋",
+                        "Active Users": 4600.0,
+                        "User Share": 0.05,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 924.0
+                    },
+                    {
+                        "Country/Region": "中国",
+                        "Active Users": 4400.0,
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 810.0
+                    },
+                    {
+                        "Country/Region": "斯洛伐克",
+                        "Active Users": 3500.0,
+                        "User Share": 0.04,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3129.0
+                    },
+                    {
+                        "Country/Region": "克罗地亚",
+                        "Active Users": 3200.0,
+                        "User Share": 0.03,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3405.0
+                    },
+                    {
+                        "Country/Region": "黎巴嫩",
+                        "Active Users": 3100.0,
+                        "User Share": 0.03,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 14736.0
+                    },
+                    {
+                        "Country/Region": "哥斯达黎加",
+                        "Active Users": 3100.0,
+                        "User Share": 0.03,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 11311.0
+                    },
+                    {
+                        "Country/Region": "保加利亚",
+                        "Active Users": 2700.0,
+                        "User Share": 0.03,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2839.0
+                    },
+                    {
+                        "Country/Region": "巴拉圭",
+                        "Active Users": 2500.0,
+                        "User Share": 0.03,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 2538.0
+                    },
+                    {
+                        "Country/Region": "新西兰",
+                        "Active Users": 2500.0,
+                        "User Share": 0.03,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "香港",
+                        "Active Users": 1700.0,
+                        "User Share": 0.02,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1555.0
+                    },
+                    {
+                        "Country/Region": "卡塔尔",
+                        "Active Users": 1600.0,
+                        "User Share": 0.02,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 3327.0
+                    },
+                    {
+                        "Country/Region": "卢森堡",
+                        "Active Users": 869.0,
+                        "User Share": 0.01,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": 1352.0
+                    },
+                    {
+                        "Country/Region": "科威特",
+                        "Active Users": 806.0,
+                        "User Share": 0.01,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "澳门",
+                        "Active Users": 175.0,
+                        "User Share": 0.01,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "乌克兰",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    }
+                ]
+            },
+            "iOS": {
+                "Active Users from Behavior": 1730000.0,
+                "User Share": 100.0,
+                "Avg Time Per User": "N/A",
+                "User Behavior by Country": [
+                    {
+                        "Country/Region": "全球",
+                        "Active Users": 1730000.0,
+                        "User Share": 100.0,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "美国",
+                        "Active Users": 716000.0,
+                        "User Share": 41.47,
+                        "Day 1 Retention": 32.23,
+                        "Day 7 Retention": 15.22,
+                        "Day 30 Retention": 9.8,
+                        "Avg Time Per User": 2009.0
+                    },
+                    {
+                        "Country/Region": "德国",
+                        "Active Users": 154000.0,
+                        "User Share": 8.91,
+                        "Day 1 Retention": 30.57,
+                        "Day 7 Retention": 12.73,
+                        "Day 30 Retention": 7.36,
+                        "Avg Time Per User": 1804.0
+                    },
+                    {
+                        "Country/Region": "日本",
+                        "Active Users": 94900.0,
+                        "User Share": 5.5,
+                        "Day 1 Retention": 34.31,
+                        "Day 7 Retention": 12.21,
+                        "Day 30 Retention": 5.32,
+                        "Avg Time Per User": 2049.0
+                    },
+                    {
+                        "Country/Region": "法国",
+                        "Active Users": 91100.0,
+                        "User Share": 5.28,
+                        "Day 1 Retention": 36.75,
+                        "Day 7 Retention": 13.08,
+                        "Day 30 Retention": 6.24,
+                        "Avg Time Per User": 1845.0
+                    },
+                    {
+                        "Country/Region": "印度",
+                        "Active Users": 72400.0,
+                        "User Share": 4.2,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "英国",
+                        "Active Users": 69800.0,
+                        "User Share": 4.04,
+                        "Day 1 Retention": 37.62,
+                        "Day 7 Retention": 12.7,
+                        "Day 30 Retention": 5.19,
+                        "Avg Time Per User": 2051.0
+                    },
+                    {
+                        "Country/Region": "俄罗斯",
+                        "Active Users": 60199.99999999999,
+                        "User Share": 3.49,
+                        "Day 1 Retention": 35.93,
+                        "Day 7 Retention": 11.63,
+                        "Day 30 Retention": 4.04,
+                        "Avg Time Per User": 1608.0
+                    },
+                    {
+                        "Country/Region": "韩国",
+                        "Active Users": 58700.0,
+                        "User Share": 3.4,
+                        "Day 1 Retention": 35.53,
+                        "Day 7 Retention": 11.6,
+                        "Day 30 Retention": 4.39,
+                        "Avg Time Per User": 2054.0
+                    },
+                    {
+                        "Country/Region": "巴西",
+                        "Active Users": 55300.0,
+                        "User Share": 3.21,
+                        "Day 1 Retention": 36.61,
+                        "Day 7 Retention": 11.28,
+                        "Day 30 Retention": 3.84,
+                        "Avg Time Per User": 1711.0
+                    },
+                    {
+                        "Country/Region": "意大利",
+                        "Active Users": 52900.0,
+                        "User Share": 3.06,
+                        "Day 1 Retention": 33.87,
+                        "Day 7 Retention": 11.72,
+                        "Day 30 Retention": 5.02,
+                        "Avg Time Per User": 1856.0
+                    },
+                    {
+                        "Country/Region": "西班牙",
+                        "Active Users": 46500.0,
+                        "User Share": 2.69,
+                        "Day 1 Retention": 35.58,
+                        "Day 7 Retention": 11.53,
+                        "Day 30 Retention": 4.49,
+                        "Avg Time Per User": 1615.0
+                    },
+                    {
+                        "Country/Region": "加拿大",
+                        "Active Users": 38300.0,
+                        "User Share": 2.22,
+                        "Day 1 Retention": 36.57,
+                        "Day 7 Retention": 11.52,
+                        "Day 30 Retention": 3.75,
+                        "Avg Time Per User": 1828.0
+                    },
+                    {
+                        "Country/Region": "土耳其",
+                        "Active Users": 34100.0,
+                        "User Share": 1.98,
+                        "Day 1 Retention": 35.11,
+                        "Day 7 Retention": 10.73,
+                        "Day 30 Retention": 3.97,
+                        "Avg Time Per User": 1621.0
+                    },
+                    {
+                        "Country/Region": "墨西哥",
+                        "Active Users": 23800.0,
+                        "User Share": 1.38,
+                        "Day 1 Retention": 37.65,
+                        "Day 7 Retention": 11.37,
+                        "Day 30 Retention": 4.4,
+                        "Avg Time Per User": 1827.0
+                    },
+                    {
+                        "Country/Region": "澳大利亚",
+                        "Active Users": 13700.000000000002,
+                        "User Share": 0.8,
+                        "Day 1 Retention": 37.31,
+                        "Day 7 Retention": 9.99,
+                        "Day 30 Retention": 2.83,
+                        "Avg Time Per User": 1944.0
+                    },
+                    {
+                        "Country/Region": "瑞典",
+                        "Active Users": 12100.0,
+                        "User Share": 0.7,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "台湾",
+                        "Active Users": 11399.999999999998,
+                        "User Share": 0.66,
+                        "Day 1 Retention": 38.74,
+                        "Day 7 Retention": 11.05,
+                        "Day 30 Retention": 3.48,
+                        "Avg Time Per User": 1546.0
+                    },
+                    {
+                        "Country/Region": "沙特阿拉伯",
+                        "Active Users": 10300.0,
+                        "User Share": 0.6,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "泰国",
+                        "Active Users": 10300.0,
+                        "User Share": 0.6,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "马来西亚",
+                        "Active Users": 8800.0,
+                        "User Share": 0.51,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "荷兰",
+                        "Active Users": 8100.0,
+                        "User Share": 0.47,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "越南",
+                        "Active Users": 7900.0,
+                        "User Share": 0.46,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "印度尼西亚",
+                        "Active Users": 7700.0,
+                        "User Share": 0.45,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "波兰",
+                        "Active Users": 7700.0,
+                        "User Share": 0.45,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "挪威",
+                        "Active Users": 7700.0,
+                        "User Share": 0.45,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "瑞士",
+                        "Active Users": 4900.0,
+                        "User Share": 0.28,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "丹麦",
+                        "Active Users": 4100.0,
+                        "User Share": 0.24,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "捷克共和国",
+                        "Active Users": 3900.0,
+                        "User Share": 0.23,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "以色列",
+                        "Active Users": 3800.0,
+                        "User Share": 0.22,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "奥地利",
+                        "Active Users": 3800.0,
+                        "User Share": 0.22,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "阿联酋",
+                        "Active Users": 3600.0,
+                        "User Share": 0.21,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "香港",
+                        "Active Users": 3500.0,
+                        "User Share": 0.21,
+                        "Day 1 Retention": 37.09,
+                        "Day 7 Retention": 10.16,
+                        "Day 30 Retention": 3.21,
+                        "Avg Time Per User": 2904.0
+                    },
+                    {
+                        "Country/Region": "比利时",
+                        "Active Users": 3400.0,
+                        "User Share": 0.2,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "匈牙利",
+                        "Active Users": 2400.0,
+                        "User Share": 0.14,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "罗马尼亚",
+                        "Active Users": 2400.0,
+                        "User Share": 0.14,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "南非",
+                        "Active Users": 2000.0,
+                        "User Share": 0.12,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "新加坡",
+                        "Active Users": 2000.0,
+                        "User Share": 0.12,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "巴基斯坦",
+                        "Active Users": 1900.0,
+                        "User Share": 0.11,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "智利",
+                        "Active Users": 1900.0,
+                        "User Share": 0.11,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "葡萄牙",
+                        "Active Users": 1800.0,
+                        "User Share": 0.1,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "芬兰",
+                        "Active Users": 1800.0,
+                        "User Share": 0.1,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "哥伦比亚",
+                        "Active Users": 1700.0,
+                        "User Share": 0.1,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "希腊",
+                        "Active Users": 1700.0,
+                        "User Share": 0.1,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "爱尔兰",
+                        "Active Users": 1600.0,
+                        "User Share": 0.09,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "阿根廷",
+                        "Active Users": 1400.0,
+                        "User Share": 0.08,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "埃及",
+                        "Active Users": 1400.0,
+                        "User Share": 0.08,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "斯洛伐克",
+                        "Active Users": 924.0,
+                        "User Share": 0.05,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "新西兰",
+                        "Active Users": 738.0,
+                        "User Share": 0.04,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "保加利亚",
+                        "Active Users": 708.0,
+                        "User Share": 0.04,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "克罗地亚",
+                        "Active Users": 658.0,
+                        "User Share": 0.04,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "秘鲁",
+                        "Active Users": 648.0,
+                        "User Share": 0.04,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "厄瓜多尔",
+                        "Active Users": 597.0,
+                        "User Share": 0.03,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "黎巴嫩",
+                        "Active Users": 306.0,
+                        "User Share": 0.02,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "卢森堡",
+                        "Active Users": 266.0,
+                        "User Share": 0.02,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "澳门",
+                        "Active Users": 66.0,
+                        "User Share": 0.01,
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "中国",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "哥斯达黎加",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "多米尼加共和国",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "阿尔及利亚",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "伊拉克",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "科威特",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "哈萨克斯坦",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "斯里兰卡",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "菲律宾",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "巴拉圭",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "卡塔尔",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    },
+                    {
+                        "Country/Region": "乌克兰",
+                        "Active Users": "N/A",
+                        "User Share": "N/A",
+                        "Day 1 Retention": "N/A",
+                        "Day 7 Retention": "N/A",
+                        "Day 30 Retention": "N/A",
+                        "Avg Time Per User": "N/A"
+                    }
+                ]
+            }
+        }
+    }
+]

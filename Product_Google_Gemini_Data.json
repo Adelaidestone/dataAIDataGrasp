@@ -1,0 +1,36 @@
+[
+    {
+        "Application": "Google Gemini",
+        "Last Updated": "2025-09-26 21:49:41",
+        "Data Sources": {
+            "Downloads & Basic Metrics": "Available",
+            "Revenue Data": "Available",
+            "User Behavior Data": "Not Available",
+            "User Retention Data": "Not Available"
+        },
+        "Platforms": {
+            "iOS": {
+                "Downloads": 16080000,
+                "Downloads Change": 2240000,
+                "Cumulative Downloads": 47680000,
+                "Cumulative Downloads Change": 16080000,
+                "Store Revenue": 1560000,
+                "Store Revenue Change": 1040000,
+                "Active Users": 20190000,
+                "Active Users Change": 5480000,
+                "Average Store Revenue": 519000,
+                "Device Info": "所有iOS设备"
+            },
+            "Android": {
+                "Downloads": 28320000,
+                "Downloads Change": 1030000,
+                "Cumulative Downloads": 147000000,
+                "Cumulative Downloads Change": 28320000,
+                "Store Revenue": "N/A",
+                "Store Revenue Change": "",
+                "Active Users": 58530000,
+                "Active Users Change": 16420000
+            }
+        }
+    }
+]

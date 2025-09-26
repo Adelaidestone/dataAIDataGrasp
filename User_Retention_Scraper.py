@@ -258,46 +258,99 @@ def extract_retention_table_data(table_wrapper, table_name):
         print(f"No data to save for {table_name}.")
         return []
 
-html_file_path = r"D:\\Users\\Mussy\\Desktop\\新建文件夹\\PolyBuzz_ Chat with AI Friends _ 用户留存.html"
-
-try:
-    with open(html_file_path, 'r', encoding='utf-8') as f:
-        html_content = f.read()
-except FileNotFoundError:
-    print(f"Error: The file '{html_file_path}' was not found.")
-    exit()
-except Exception as e:
-    print(f"An error occurred while reading the file: {e}")
-    exit()
-
-soup = BeautifulSoup(html_content, 'html.parser')
-
-# Extract product name from HTML
-product_name = extract_product_name_from_html(soup)
-print(f"提取到的产品名: {product_name}")
-
-# Extract application info (name and channel) from HTML
-app_info = extract_app_info_from_html(soup)
-print(f"提取到的应用名: {app_info['app_name']}")
-print(f"提取到的渠道: {app_info['channel']}")
-
-# --- Extract data from the first table (Monthly App Retention) ---
-table_wrapper_monthly = soup.find('div', {'data-table-type': 'app_user_retention_table'})
-monthly_retention_data = extract_retention_table_data(table_wrapper_monthly, "Monthly App Retention")
-
-# --- Extract data from the second table (Publisher Apps User Retention) ---
-table_wrapper_publisher = soup.find('div', {'data-table-type': 'publisher_apps_user_retention_table'})
-publisher_retention_data = extract_retention_table_data(table_wrapper_publisher, "Publisher Apps User Retention (Overall)")
-
-# Combine all extracted data into a single JSON object
-final_json_output = {
-    "Application": product_name,
-    "Platform": app_info['channel'],
-    "Monthly App Retention": monthly_retention_data,
-    "Publisher Apps User Retention (Overall)": publisher_retention_data
+# HTML file paths for both platforms
+html_files = {
+    "Android": r"D:\\Users\\Mussy\\Desktop\\新建文件夹\\PolyBuzz_ Chat with AI Friends _ 用户留存.html",
+    "iOS": r"D:\\Users\\Mussy\\Desktop\\新建文件夹\\PolyBuzz_ Chat with AI Friends _ data.ai苹果用户留存.html"
 }
 
-output_json_path = "PolyBuzz_User_Retention_Aggregated_Analytics_Data.json"
-with open(output_json_path, 'w', encoding='utf-8') as json_file:
-    json.dump(final_json_output, json_file, ensure_ascii=False, indent=4)
-print(f"整合后的数据已保存到文件：{output_json_path}")
+def process_html_file(file_path, platform_name):
+    """
+    Process a single HTML file and return the extracted data
+    """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+    except FileNotFoundError:
+        print(f"⚠️ 文件未找到: {file_path}")
+        return None
+    except Exception as e:
+        print(f"❌ 读取文件时出错 {file_path}: {e}")
+        return None
+
+    soup = BeautifulSoup(html_content, 'html.parser')
+    
+    print(f"\n🔍 处理 {platform_name} 平台数据...")
+
+    # Extract product name from HTML
+    product_name = extract_product_name_from_html(soup)
+    print(f"提取到的产品名: {product_name}")
+
+    # Extract application info (name and channel) from HTML
+    app_info = extract_app_info_from_html(soup)
+    print(f"提取到的应用名: {app_info['app_name']}")
+    print(f"提取到的渠道: {app_info['channel']}")
+
+    # --- Extract data from the first table (Monthly App Retention) ---
+    table_wrapper_monthly = soup.find('div', {'data-table-type': 'app_user_retention_table'})
+    monthly_retention_data = extract_retention_table_data(table_wrapper_monthly, f"{platform_name} Monthly App Retention")
+
+    # --- Extract data from the second table (Publisher Apps User Retention) ---
+    table_wrapper_publisher = soup.find('div', {'data-table-type': 'publisher_apps_user_retention_table'})
+    publisher_retention_data = extract_retention_table_data(table_wrapper_publisher, f"{platform_name} Publisher Apps User Retention (Overall)")
+
+    return {
+        "Application": product_name,
+        "Platform": app_info['channel'],
+        "Monthly App Retention": monthly_retention_data,
+        "Publisher Apps User Retention (Overall)": publisher_retention_data
+    }
+
+# Process all HTML files
+all_platform_data = {}
+for platform, file_path in html_files.items():
+    print(f"\n{'='*60}")
+    print(f"🚀 开始处理 {platform} 平台...")
+    print(f"{'='*60}")
+    
+    platform_data = process_html_file(file_path, platform)
+    if platform_data:
+        all_platform_data[platform] = platform_data
+        print(f"✅ {platform} 平台数据处理完成")
+    else:
+        print(f"❌ {platform} 平台数据处理失败")
+
+# Save data for each platform separately and create a combined file
+print(f"\n{'='*60}")
+print("💾 保存数据文件...")
+print(f"{'='*60}")
+
+for platform, data in all_platform_data.items():
+    if platform == "Android":
+        output_path = "PolyBuzz_User_Retention_Aggregated_Analytics_Data.json"
+    else:
+        output_path = f"PolyBuzz_User_Retention_{platform}_Aggregated_Analytics_Data.json"
+    
+    try:
+        with open(output_path, 'w', encoding='utf-8') as json_file:
+            json.dump(data, json_file, ensure_ascii=False, indent=4)
+        print(f"✅ {platform} 数据已保存到: {output_path}")
+    except Exception as e:
+        print(f"❌ 保存 {platform} 数据时出错: {e}")
+
+# Create a combined summary file
+if all_platform_data:
+    combined_data = {
+        "Application": next(iter(all_platform_data.values()))["Application"],
+        "Platforms": all_platform_data
+    }
+    
+    combined_output_path = "PolyBuzz_User_Retention_Combined_Analytics_Data.json"
+    try:
+        with open(combined_output_path, 'w', encoding='utf-8') as json_file:
+            json.dump(combined_data, json_file, ensure_ascii=False, indent=4)
+        print(f"✅ 合并数据已保存到: {combined_output_path}")
+    except Exception as e:
+        print(f"❌ 保存合并数据时出错: {e}")
+
+print(f"\n🎉 所有处理完成！成功处理了 {len(all_platform_data)} 个平台的数据")

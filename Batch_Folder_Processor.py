@@ -23,7 +23,6 @@ class SmartProductProcessor:
         self.base_output_path = base_output_path
         self.script_mappings = {
             'main_allplatform': 'Grabbed_Aggregated_Analytics_Data.py',
-            'user_retention': 'User_Retention_Scraper.py',
             'user_behavior': 'User_Behavior_Scraper.py',
             'revenue': 'Revenue_Scraper.py'
         }
@@ -44,9 +43,7 @@ class SmartProductProcessor:
     def identify_file_type(self, filename):
         """识别HTML文件类型"""
         filename_lower = filename.lower()
-        if '留存' in filename or 'retention' in filename_lower:
-            return 'user_retention'
-        elif '行为' in filename or 'behavior' in filename_lower or 'behaviour' in filename_lower:
+        if '行为' in filename or 'behavior' in filename_lower or 'behaviour' in filename_lower or 'userbehavior' in filename_lower or 'userbehaivor' in filename_lower:
             return 'user_behavior'
         elif '收入' in filename or 'revenue' in filename_lower:
             return 'revenue'
@@ -97,7 +94,7 @@ class SmartProductProcessor:
             with open(script_path, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            if script_name in ['User_Retention_Scraper.py', 'User_Behavior_Scraper.py']:
+            if script_name in ['User_Behavior_Scraper.py']:
                 # 多平台脚本 - 更新html_files字典
                 android_file = None
                 ios_file = None
@@ -223,9 +220,9 @@ class SmartProductProcessor:
                         self.run_script(script)
                         self.restore_script_backup(script)
             
-            # 生成最终聚合数据并保存为单独的产品文件
-            self.generate_final_aggregated_data()
-            self.save_product_data_separately()
+            # 直接保存产品数据并清理原始文件
+            self.save_product_data_from_aggregator()
+            self.cleanup_raw_data()
             
             return True
             
@@ -233,96 +230,95 @@ class SmartProductProcessor:
             print(f"❌ 处理产品文件夹时出错: {e}")
             return False
     
-    def generate_final_aggregated_data(self):
-        """生成最终聚合数据并清理原始文件"""
+    def save_product_data_from_aggregator(self):
+        """直接从各个脚本输出生成产品数据文件"""
         print("🔄 生成最终聚合数据...")
         
         try:
-            # 运行Data_Aggregator生成最终聚合数据
-            data_aggregator_path = os.path.join("E:\\dataAI", "Data_Aggregator.py")
-            result = subprocess.run([sys.executable, data_aggregator_path, "--skip-scrapers"], 
-                                  cwd="E:\\dataAI")
+            # 直接从各个脚本的输出文件整合数据
+            files = {
+                'grabbed': 'Aggregated_Analytics_Data.json',
+                'revenue': 'PolyBuzz_Revenue_Aggregated_Analytics_Data.json',
+                'user_behavior': 'User_Behavior_Combined_Analytics_Data.json'
+            }
             
-            if result.returncode == 0:
-                print("✅ 最终聚合数据生成成功")
-                self.cleanup_raw_data()
-            else:
-                print("❌ 数据整合失败")
+            # 加载数据文件
+            data = {}
+            for key, file_path in files.items():
+                if os.path.exists(file_path):
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            data[key] = json.load(f)
+                    except:
+                        data[key] = None
+                else:
+                    data[key] = None
+            
+            # 获取应用名称
+            app_name = "Unknown_Application"
+            for source_data in data.values():
+                if source_data and isinstance(source_data, dict):
+                    if 'Application' in source_data:
+                        app_name = source_data['Application']
+                        break
+                elif source_data and isinstance(source_data, list) and len(source_data) > 0:
+                    if 'Application' in source_data[0]:
+                        app_name = source_data[0]['Application']
+                        break
+            
+            # 创建聚合数据结构
+            aggregated_data = [{
+                "Application": app_name,
+                "Last Updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "Data Sources": {
+                    "Downloads & Basic Metrics": "Available" if data['grabbed'] else "Not Available",
+                    "Revenue Data": "Available" if data['revenue'] else "Not Available", 
+                    "User Behavior Data": "Available" if data['user_behavior'] else "Not Available"
+                },
+                "Platforms": self.build_platform_data(data)
+            }]
+            
+            # 清理产品名称，用于文件名
+            import re
+            clean_name = re.sub(r'[^\w\s-]', '', app_name).strip()
+            clean_name = re.sub(r'[-\s]+', '_', clean_name)
+            
+            # 直接保存到最终输出目录
+            final_output_dir = r"D:\Users\Mussy\Desktop\result"
+            os.makedirs(final_output_dir, exist_ok=True)
+            
+            product_file = f"Product_{clean_name}_Data.json"
+            product_path = os.path.join(final_output_dir, product_file)
+            
+            with open(product_path, 'w', encoding='utf-8') as f:
+                json.dump(aggregated_data, f, ensure_ascii=False, indent=4)
+            
+            print(f"✅ 最终聚合数据生成成功")
+            print(f"💾 产品数据已保存到: {product_path}")
                 
         except Exception as e:
             print(f"❌ 生成最终聚合数据时出错: {e}")
     
-    def save_current_product_data(self):
-        """保存当前产品数据到临时文件"""
-        try:
-            import uuid
-            temp_file = f"temp_product_{uuid.uuid4().hex[:8]}.json"
-            temp_path = os.path.join("E:\\dataAI", temp_file)
-            
-            # 复制当前的聚合数据到临时文件
-            comprehensive_file = os.path.join("E:\\dataAI", "Comprehensive_Aggregated_Analytics_Data.json")
-            if os.path.exists(comprehensive_file):
-                import shutil
-                shutil.copy2(comprehensive_file, temp_path)
-                print(f"📋 当前产品数据已保存到: {temp_file}")
-                
-        except Exception as e:
-            print(f"❌ 保存产品数据失败: {e}")
-    
-    def merge_all_products_data(self, successful_products):
-        """合并所有产品的数据到最终聚合文件"""
-        print(f"\n🔄 合并 {len(successful_products)} 个产品的数据...")
+    def build_platform_data(self, data):
+        """构建平台数据结构"""
+        platforms = {}
         
-        try:
-            # 运行Data_Aggregator生成最终合并数据
-            print("🚀 运行数据整合器合并所有产品数据...")
-            data_aggregator_path = os.path.join("E:\\dataAI", "Data_Aggregator.py")
-            result = subprocess.run([sys.executable, data_aggregator_path, "--skip-scrapers"], 
-                                  cwd="E\\dataAI")
-            
-            if result.returncode == 0:
-                print("✅ 所有产品数据合并完成")
+        # 从grabbed数据获取基础平台结构
+        if data['grabbed'] and isinstance(data['grabbed'], list) and len(data['grabbed']) > 0:
+            base_app_data = data['grabbed'][0]
+            platforms = base_app_data.get('Platforms', {})
+        
+        # 添加用户行为数据
+        if data['user_behavior'] and 'Platforms' in data['user_behavior']:
+            for platform_name, behavior_data in data['user_behavior']['Platforms'].items():
+                if platform_name not in platforms:
+                    platforms[platform_name] = {}
                 
-                # 清理原始数据
-                self.cleanup_raw_data()
-            else:
-                print("❌ 数据合并失败")
-                
-        except Exception as e:
-            print(f"❌ 合并产品数据时出错: {e}")
-    
-    def save_product_data_separately(self):
-        """将当前产品数据保存为独立文件"""
-        try:
-            comprehensive_file = os.path.join("E:\\dataAI", "Comprehensive_Aggregated_Analytics_Data.json")
-            if os.path.exists(comprehensive_file):
-                # 读取当前数据
-                with open(comprehensive_file, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                
-                # 获取产品名称
-                if isinstance(data, list) and len(data) > 0:
-                    app_name = data[0].get('Application', 'Unknown_Product')
-                elif isinstance(data, dict):
-                    app_name = data.get('Application', 'Unknown_Product')
-                else:
-                    app_name = 'Unknown_Product'
-                
-                # 清理产品名称，用于文件名
-                import re
-                clean_name = re.sub(r'[^\w\s-]', '', app_name).strip()
-                clean_name = re.sub(r'[-\s]+', '_', clean_name)
-                
-                # 保存为独立的产品文件
-                product_file = f"Product_{clean_name}_Data.json"
-                product_path = os.path.join("E:\\dataAI", product_file)
-                
-                import shutil
-                shutil.copy2(comprehensive_file, product_path)
-                print(f"💾 产品数据已保存: {product_file}")
-                
-        except Exception as e:
-            print(f"❌ 保存独立产品数据失败: {e}")
+                # 添加用户行为数据
+                if 'User Behavior Data' in behavior_data:
+                    platforms[platform_name]['User Behavior by Country'] = behavior_data['User Behavior Data']
+        
+        return platforms
     
     def run_simple_data_separator(self):
         """运行简单数据分离器"""
@@ -356,13 +352,11 @@ class SmartProductProcessor:
             cleaned_files = 0
             for pattern in json_patterns:
                 for file_path in glob.glob(os.path.join(main_dir, pattern)):
-                    if os.path.basename(file_path) != 'Comprehensive_Aggregated_Analytics_Data.json':
-                        os.remove(file_path)
-                        cleaned_files += 1
-                        print(f"🗑️ 删除: {os.path.basename(file_path)}")
+                    os.remove(file_path)
+                    cleaned_files += 1
+                    print(f"🗑️ 删除: {os.path.basename(file_path)}")
             
             print(f"✅ 清理完成，删除了 {cleaned_files} 个原始文件")
-            print("📊 只保留: Comprehensive_Aggregated_Analytics_Data.json")
             
         except Exception as e:
             print(f"❌ 清理过程中出错: {e}")
@@ -439,18 +433,17 @@ class SmartProductProcessor:
         }
         
         # 收集最终聚合数据文件
-        main_dir = "E:\\dataAI"
-        final_files = []
-        
-        # 检查是否有最终聚合数据文件
-        comprehensive_file = os.path.join(main_dir, "Comprehensive_Aggregated_Analytics_Data.json")
-        if os.path.exists(comprehensive_file):
-            final_files.append("Comprehensive_Aggregated_Analytics_Data.json")
+        final_files = [
+            "Complete_Products_Data.json",
+            "Incomplete_Products_Data.json"
+        ]
         
         summary["Batch_Processing_Summary"]["Final_Output_Files"] = final_files
         
-        # 保存总结报告
-        summary_path = os.path.join(main_dir, 'Batch_Processing_Summary.json')
+        # 保存总结报告到目标目录
+        final_output_dir = r"D:\Users\Mussy\Desktop\result"
+        os.makedirs(final_output_dir, exist_ok=True)
+        summary_path = os.path.join(final_output_dir, 'Batch_Processing_Summary.json')
         with open(summary_path, 'w', encoding='utf-8') as f:
             json.dump(summary, f, ensure_ascii=False, indent=4)
         
@@ -459,7 +452,10 @@ class SmartProductProcessor:
         for product in successful_products:
             print(f"   ✅ {product}")
         print(f"📊 总结报告: {summary_path}")
-        print(f"📁 最终聚合数据: {main_dir}")
+        print(f"📁 最终聚合数据: D:\\Users\\Mussy\\Desktop\\result")
+        
+        # 所有数据已直接输出到目标目录，无需复制
+    
 
 def main():
     """主函数"""

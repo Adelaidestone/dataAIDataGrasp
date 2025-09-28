@@ -91,6 +91,8 @@ def convert_to_numeric(value_str):
     if not isinstance(value_str, str) or not value_str.strip():
         return value_str # Return as is if not a string or empty
 
+    # Keep original string for later reference
+    original_str = value_str.strip()
     cleaned_str = value_str.replace('$', '').strip()
 
     is_negative = False
@@ -114,13 +116,23 @@ def convert_to_numeric(value_str):
 
     try:
         if not cleaned_str: # Handle cases where after cleaning, string is empty
-            return value_str
+            return original_str
+        
+        # Convert to float first
         numeric_value = float(cleaned_str) * multiplier
         if is_negative:
             numeric_value = -numeric_value
-        return int(numeric_value) if numeric_value == int(numeric_value) else numeric_value
+        
+        # Preserve original decimal precision
+        # If original has no decimal point and result is whole number, return int
+        if '.' not in original_str and numeric_value.is_integer():
+            return int(numeric_value)
+        else:
+            # For decimals, preserve the original precision
+            return numeric_value
+            
     except ValueError:
-        return value_str # Return original if conversion fails
+        return original_str # Return original if conversion fails
 
 # Map Highcharts series colors to platforms based on the legend in the image
 # Not used for this specific request, but kept for potential future use or context.

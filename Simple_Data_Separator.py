@@ -30,28 +30,28 @@ class SimpleDataSeparator:
     
     def load_all_product_files(self):
         """加载所有产品文件"""
-        # 查找所有产品数据文件
-        product_files = glob.glob("Product_*_Data.json")
+        # 从目标目录查找所有产品数据文件
+        target_dir = r"D:\Users\Mussy\Desktop\result"
+        product_files = glob.glob(os.path.join(target_dir, "Product_*_Data.json"))
         
         print(f"🔍 找到 {len(product_files)} 个产品文件:")
         for file in product_files:
-            print(f"  📄 {file}")
+            print(f"  📄 {os.path.basename(file)}")
         
         return product_files
     
     def is_product_complete(self, product_data):
-        """检查产品数据是否完整（简单检查4个数据源）"""
+        """检查产品数据是否完整（检查3个数据源）"""
         if not isinstance(product_data, dict):
             return False
         
         data_sources = product_data.get('Data Sources', {})
         
-        # 检查4个必需的数据源
+        # 检查3个必需的数据源（移除用户留存数据）
         required_sources = [
             'Downloads & Basic Metrics',
             'Revenue Data',
-            'User Behavior Data',
-            'User Retention Data'
+            'User Behavior Data'
         ]
         
         available_count = 0
@@ -59,8 +59,8 @@ class SimpleDataSeparator:
             if data_sources.get(source) == 'Available':
                 available_count += 1
         
-        # 如果4个都有，就是完整的
-        return available_count == 4
+        # 如果3个都有，就是完整的
+        return available_count == 3
     
     def separate_products(self):
         """分离完整和不完整的产品数据"""
@@ -107,21 +107,26 @@ class SimpleDataSeparator:
         """保存分离后的数据到两个JSON文件"""
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
+        # 设置输出目录
+        output_dir = r"D:\Users\Mussy\Desktop\result"
+        os.makedirs(output_dir, exist_ok=True)
+        
         # 保存完整产品数据
         if self.complete_products:
             complete_data = {
                 "Complete_Products_Data": {
                     "generated_time": current_time,
                     "total_products": len(self.complete_products),
-                    "description": "包含所有4种数据源的完整产品数据",
+                    "description": "包含所有3种数据源的完整产品数据",
                     "products": self.complete_products
                 }
             }
             
-            with open("Complete_Products_Data.json", 'w', encoding='utf-8') as f:
+            complete_path = os.path.join(output_dir, "Complete_Products_Data.json")
+            with open(complete_path, 'w', encoding='utf-8') as f:
                 json.dump(complete_data, f, indent=2, ensure_ascii=False)
             
-            print(f"✅ 完整产品数据已保存: Complete_Products_Data.json ({len(self.complete_products)} 个产品)")
+            print(f"✅ 完整产品数据已保存: {complete_path} ({len(self.complete_products)} 个产品)")
         
         # 保存不完整产品数据
         if self.incomplete_products:
@@ -134,10 +139,11 @@ class SimpleDataSeparator:
                 }
             }
             
-            with open("Incomplete_Products_Data.json", 'w', encoding='utf-8') as f:
+            incomplete_path = os.path.join(output_dir, "Incomplete_Products_Data.json")
+            with open(incomplete_path, 'w', encoding='utf-8') as f:
                 json.dump(incomplete_data, f, indent=2, ensure_ascii=False)
             
-            print(f"⚠️  不完整产品数据已保存: Incomplete_Products_Data.json ({len(self.incomplete_products)} 个产品)")
+            print(f"⚠️  不完整产品数据已保存: {incomplete_path} ({len(self.incomplete_products)} 个产品)")
         
         return True
 
@@ -153,9 +159,10 @@ def main():
         # 保存分离后的数据
         separator.save_separated_data()
     
+    output_dir = r"D:\Users\Mussy\Desktop\result"
     print(f"\n🎯 分离完成!")
-    print(f"📁 完整产品数据: Complete_Products_Data.json")
-    print(f"📁 不完整产品数据: Incomplete_Products_Data.json")
+    print(f"📁 完整产品数据: {os.path.join(output_dir, 'Complete_Products_Data.json')}")
+    print(f"📁 不完整产品数据: {os.path.join(output_dir, 'Incomplete_Products_Data.json')}")
 
 if __name__ == "__main__":
     main()
